@@ -12,48 +12,48 @@ public class Data {
 	public static ArrayList<Person> athleteData = new ArrayList<Person>();
 	public static ArrayList<Person> participantList = new ArrayList<Person>();
 	public static ArrayList<String> inputList = new ArrayList<String>();
-	
-	
+
+
 	public static int p;
 	String prediction;
 
 	public void athleteData(){	
 
-		athleteData.add(new Person("S11","Sagar","Swimming ",21,"TAS",0));
-		athleteData.add(new Person("S22","Bhushan","Swimming ",29,"SA",0));
-		athleteData.add(new Person("S33","Namrata","Swimming ",25,"WA",0));
-		athleteData.add(new Person("S44","Varad","Swimming ",28,"QLD",0));
-		athleteData.add(new Person("S55","Amit","Swimming ",31,"VIC",0));
-		athleteData.add(new Person("S66","Abha","Swimming ",22,"VIC",0));
-		athleteData.add(new Person("S77","Ambar","Swimming ",24,"NSW",0));
-		athleteData.add(new Person("S88","Rucha","Swimming ",23,"NT",0));
+		athleteData.add(new Person("S11","SAGAR","Swimming ",21,"TAS",0));
+		athleteData.add(new Person("S22","SHIV","Swimming ",29,"SA",0));
+		athleteData.add(new Person("S33","NATY","Swimming ",25,"WA",0));
+		athleteData.add(new Person("S44","VARAD","Swimming ",28,"QLD",0));
+		athleteData.add(new Person("S55","AMIT","Swimming ",31,"VIC",0));
+		athleteData.add(new Person("S66","ABHA","Swimming ",22,"VIC",0));
+		athleteData.add(new Person("S77","AMBAR","Swimming ",24,"NSW",0));
+		athleteData.add(new Person("S88","RUCHA","Swimming ",23,"NT",0));
 
-		athleteData.add(new Person("C11","Jimmy","Cycling ",21,"TAS",0));
-		athleteData.add(new Person("C22","Susan","Cycling ",29,"ACT",0));
-		athleteData.add(new Person("C33","Giri","Cycling ",25,"WA",0));
-		athleteData.add(new Person("C44","Jacky","Cycling ",28,"QLD",0));
-		athleteData.add(new Person("C55","Chaitu","Cycling ",19,"VIC",0));
-		athleteData.add(new Person("C66","Deep","Cycling ",24,"NSW",0));
-		athleteData.add(new Person("C77","Eshan","Cycling ",27,"NSW",0));
-		athleteData.add(new Person("C88","Carol","Cycling ",34,"NSW",0));
+		athleteData.add(new Person("C11","JIMMY","Cycling ",21,"TAS",0));
+		athleteData.add(new Person("C22","SUSAN","Cycling ",29,"ACT",0));
+		athleteData.add(new Person("C33","RONNY","Cycling ",25,"WA",0));
+		athleteData.add(new Person("C44","JACKY","Cycling ",28,"QLD",0));
+		athleteData.add(new Person("C55","CHAN","Cycling ",19,"VIC",0));
+		athleteData.add(new Person("C66","DEEP","Cycling ",24,"NSW",0));
+		athleteData.add(new Person("C77","EASHAN","Cycling ",27,"NSW",0));
+		athleteData.add(new Person("C88","CAROL","Cycling ",34,"NSW",0));
 
 		athleteData.add(new Person("R11","Naresh","Running ",18,"NT",0));
-		athleteData.add(new Person("R12","Satya","Running ",21,"WA",0));
-		athleteData.add(new Person("R13","Shreya","Running ",30,"ACT",0));
-		athleteData.add(new Person("R14","Dave","Running ",27,"TAS",0));
-		athleteData.add(new Person("R15","Niraj","Running ",22,"NSW",0));
-		athleteData.add(new Person("R16","Shivang","Running ",23,"QLD",0));
-		athleteData.add(new Person("R17","Gagan","Running ",28,"VIC",0));
-		athleteData.add(new Person("R19","Shewale","Running ",18,"NT",0));
+		athleteData.add(new Person("R12","SATYA","Running ",21,"WA",0));
+		athleteData.add(new Person("R13","SHREYA","Running ",30,"ACT",0));
+		athleteData.add(new Person("R14","DAVE","Running ",27,"TAS",0));
+		athleteData.add(new Person("R15","NIRAJ","Running ",22,"NSW",0));
+		athleteData.add(new Person("R16","ROCKY","Running ",23,"QLD",0));
+		athleteData.add(new Person("R17","GAGAN","Running ",28,"VIC",0));
+		athleteData.add(new Person("R19","SHELDON","Running ",18,"NT",0));
 
-		athleteData.add(new Person("P01","Rohan","SpAthlete",21,"MYS",0));
-		athleteData.add(new Person("P02","Arjun","SpAthlete",25,"NSW",0));
-		athleteData.add(new Person("P03","Shradha","SpAthlete",18,"NT",0));
-		athleteData.add(new Person("P04","Nilema","SpAthlete",26,"WA",0));
-		athleteData.add(new Person("P05","Pandeji","SpAthlete",28,"VIC",0));
-		athleteData.add(new Person("P06","Giri","SpAthlete",25,"NSW",0));
-		athleteData.add(new Person("P07","Revati","SpAthlete",21,"MYS",0));
-		athleteData.add(new Person("P08","Rohit","SpAthlete",27,"MYS",0));
+		athleteData.add(new Person("P01","ROHAN","SpAthlete",21,"MYS",0));
+		athleteData.add(new Person("P02","ARJUN","SpAthlete",25,"NSW",0));
+		athleteData.add(new Person("P03","SAM","SpAthlete",18,"NT",0));
+		athleteData.add(new Person("P04","NOLAN","SpAthlete",26,"WA",0));
+		athleteData.add(new Person("P05","PAUL","SpAthlete",28,"VIC",0));
+		athleteData.add(new Person("P06","GIRI","SpAthlete",25,"NSW",0));
+		athleteData.add(new Person("P07","REVATI","SpAthlete",21,"MYS",0));
+		athleteData.add(new Person("P08","ROHIT","SpAthlete",27,"MYS",0));
 	}
 
 
@@ -243,7 +243,7 @@ public class Data {
 		Scanner scan = new Scanner(System.in); 
 
 		do{
-			prediction = scan.next();
+			prediction = scan.next().toUpperCase();
 			for(int i=0;i<athleteData.size();i++){	
 				if(!(prediction.equals(athleteData.get(i).getName()))){
 					count++;
@@ -265,15 +265,21 @@ public class Data {
 
 
 	public void Winner(){
-		
-		if(prediction.equals(participantList.get(0).getName())){		
-			
-			System.out.println("Congragulations");			
+
+		if(prediction.equals(participantList.get(0).getName())){
+			System.out.println();
+			System.out.println("\tWinner = " + participantList.get(0).getName());
+			System.out.println("\tPredicted the Correct Winner -- Congragulations");			
 		}else{
-			System.out.println("Prediction is incorrect");
+			System.out.println();
+			System.out.println("\tYour Prediction =" + prediction);
+			System.out.println("\tWinner is = " + participantList.get(0).getName());
+			System.out.println("\tPrediction Went Wrong. Bad Luck");
 		}	
-		
-/*		Scanner scan= new Scanner(System.in);
+
+		Driver.listclear();
+
+		Scanner scan= new Scanner(System.in);
 		System.out.println();
 		System.out.println("\tWould you like to play another game then Press Y/N :");
 
@@ -287,11 +293,12 @@ public class Data {
 				Driver.displayMenu();
 				break;
 			}
-*/
+
 		}
 	}
-	
-	
+}
+
+
 
 
 

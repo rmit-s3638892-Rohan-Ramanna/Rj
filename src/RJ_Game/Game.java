@@ -27,8 +27,6 @@ public class Game {
 
 	public static void gamePlay(){
 
-		int c=0;
-		Data d = new Data();
 		gameID = "Game"+(++counter);
 		Scanner scan = new Scanner(System.in);
 
@@ -36,16 +34,35 @@ public class Game {
 			Data.participantList.get(i).setGameID(gameID);
 			Data.participantList.get(i).setTime(Randnum.gentime.get(i));
 		}
-
-		System.out.println("\tResults");
+		
+		System.out.println();
+		System.out.println("\tResults:");
 		for(int i =0;i<Data.participantList.size();i++){
 			timesort();
 			System.out.println(Data.participantList.get(i));
 			finallist.add(Data.participantList.get(i));	
-			resultList.add(Data.participantList.get(i));
-			
+			resultList.add(Data.participantList.get(i));			
 		}
 
 	}
+	
+	public static void finalParticipantlist(){
+		for (int i=0;i<resultList.size();i++){
+			System.out.println(resultList.get(i));
+		}
+	}
+	
+	public static void point(){
+		
+		int p=0;
+		int first;
+		
+	
+		
+		
+		
+	}
+	
+	
 
 }

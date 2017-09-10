@@ -14,7 +14,7 @@ public class RefereeData {
 		ref.add(new Referee("RF03","Reham",25,"VIC"));
 	}
 
-	public static void DisplayReferee(){
+	public void DisplayReferee(){
 		System.out.println();
 		System.out.println("\tOfficials for this Match is: ");
 		System.out.println();
@@ -23,7 +23,7 @@ public class RefereeData {
 		}
 	}
 
-	public static void SelectReferee(){
+	public void SelectReferee(){
 
 		System.out.println();
 		Boolean valid = true; 

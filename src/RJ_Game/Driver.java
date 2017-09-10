@@ -4,9 +4,7 @@ package RJGame;
  * Created by Rohan.
  */
 
-import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.InputMismatchException;
 
 
@@ -43,6 +41,7 @@ public class Driver {
 						break;
 					case 2:
 						System.out.println("\tDisplay the final results of all games");
+						Game.finalParticipantlist();
 						break;
 					case 3:
 						System.out.println("\tDisplay the points of all Athletes");
@@ -96,8 +95,7 @@ public class Driver {
 						r.compete();
 						Game.gamePlay();
 						da.Winner();
-						listclear();
-						GamerunOptions();
+				
 					} else if (no == 2){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is CYCLING");
@@ -108,6 +106,7 @@ public class Driver {
 						da.PredictWinner();
 						r.compete();
 						Game.gamePlay();
+						da.Winner();
 					} if (no == 3){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is SWIMMING");
@@ -116,7 +115,9 @@ public class Driver {
 						rf.DisplayReferee();
 						rf.SelectReferee();
 						da.PredictWinner();
+						r.compete();
 						Game.gamePlay();
+						da.Winner();
 					}
 
 				}opt = false;
