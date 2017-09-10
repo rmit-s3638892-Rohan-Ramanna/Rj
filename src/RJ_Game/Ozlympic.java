@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ozlympic {
 	
  	public static void main(String[] args) {
-		MenuDriven menu = new MenuDriven ();
+		Driver menu = new Driver ();
 		menu.displayMenu();
 
 	    }
