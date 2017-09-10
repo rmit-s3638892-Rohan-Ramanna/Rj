@@ -1,19 +1,29 @@
 package RJ_Game;
 
+/**
+ * Created by Rohan.
+ */
+
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class Game {
 
-	public static Iterator iter = Data.Participantlist.iterator();
 
 	Driver d = new Driver();
+
 	private static ArrayList<Person> game = new ArrayList<Person>();
+	public static ArrayList<Person> finallist = new ArrayList<Person>();
 
 	static int counter;
 	static String gameID;
 
+	public static void timesort(){
+		Collections.sort(Data.Participantlist,new ListCompare());
+	}
 
 	public static void gamePlay(){
 
@@ -30,22 +40,28 @@ public class Game {
 
 		System.out.println("\tResults");
 		for(int i =0;i<Data.Participantlist.size();i++){
+			timesort();
 			System.out.println(Data.Participantlist.get(i));
+			finallist.add(Data.Participantlist.get(i));
 		}
 
+		d.Winner();
+		
+		System.out.println();
+		System.out.println("\tWould you like to play another game then Press Y/N :");
 
-		System.out.println("\tWould you like to play another game then Press Yes or No :");
+		char input= scan.next().charAt(0);
 
-		String input= scan.next();
+		while(true){
+			if(input =='Y' || input == 'y'){
+				Driver.GamerunOptions();
+				break;
+			}else {
+				Driver.displayMenu();
+				break;
+			}
 
-		if(input =="Yes" || input == "yes"){
-			Driver.displayMenu();
 		}
-		if(input =="NO" || input == "no"){
-			Driver.GamerunOptions();
-		}
-
-
 
 	}
 

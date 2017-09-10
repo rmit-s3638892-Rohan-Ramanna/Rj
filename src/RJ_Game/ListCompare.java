@@ -1,4 +1,9 @@
 package RJ_Game;
+
+/**
+ * Created by Rohan.
+ */
+
 import java.util.Comparator;
 
 public class ListCompare implements Comparator<Person> {

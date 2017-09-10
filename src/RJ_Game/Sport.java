@@ -7,5 +7,4 @@ public interface Sport {
 	public static void compete(){
 	}
 	
-
 }

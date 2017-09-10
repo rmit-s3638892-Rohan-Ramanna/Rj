@@ -1,5 +1,10 @@
 package RJ_Game;
 
+/**
+ * Created by Rohan.
+ */
+
+
 import java.awt.RenderingHints.Key;
 import java.util.*;
 
@@ -7,6 +12,7 @@ import java.util.*;
 public class Data {
 
 	public static int p;
+	String prediction;
 
 	Person ap ;
 
@@ -14,9 +20,6 @@ public class Data {
 	public static ArrayList<Person> Participantlist = new ArrayList<Person>();
 	public static ArrayList<String> Inputlist = new ArrayList<String>();
 
-	//	private HashSet<String> Inputlist = new HashSet<String>();
-
-	//public static HashMap<String,String> input = new HashMap<String,String>();
 
 
 	public void athleteData(){	
@@ -245,9 +248,9 @@ public class Data {
 		Scanner scan = new Scanner(System.in); 
 
 		do{
-			String Winner = scan.next();
+			prediction = scan.next();
 			for(int i=0;i<AthleteData.size();i++){	
-				if(!(Winner.equals(AthleteData.get(i).getName()))){
+				if(!(prediction.equals(AthleteData.get(i).getName()))){
 					count++;
 				}else{
 					System.out.println("\tPredicted Winner is : " + AthleteData.get(i).getName());
@@ -266,7 +269,22 @@ public class Data {
 	}
 
 
+	public void Winner(){
+		System.out.println(Game.finallist.get(0).getName());
+		System.out.println(prediction);
+			
+		if(prediction.equals(Participantlist.get(0).getName())){		
+			System.out.println("sdas");
+			System.out.println("Congragulations");
+		}else{
+			System.out.println("Prediction is incorrect");
+		}
+	}
 }
+
+
+
+
 
 
 

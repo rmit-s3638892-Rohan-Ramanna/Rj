@@ -1,5 +1,9 @@
 package RJ_Game;
 
+/**
+ * Created by Rohan.
+ */
+
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -8,6 +12,7 @@ import java.util.InputMismatchException;
 
 public class Driver {
 	public static Scanner scan = new Scanner(System.in);
+	public static int no = 0;
 
 	public static void displayMenu() {
 
@@ -60,11 +65,11 @@ public class Driver {
 
 	public static void GamerunOptions() {
 
-		Data ath = new Data();
+		Data da = new Data();
 		Running r = new Running();
 		RefereeData ref = new RefereeData();
-		ath.athleteData();
-		int no = 0;
+		da.athleteData();
+		
 		boolean opt = true;
 
 		do{
@@ -83,29 +88,32 @@ public class Driver {
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is RUNNING");
 						System.out.println();
-						ath.AthleteDisplay();
-						ath.SelectrunAthlete();
+						da.AthleteDisplay();
+						da.SelectrunAthlete();
 						ref.DisplayReferee();
 						ref.SelectReferee();
-						ath.PredictWinner();						
+						da.PredictWinner();
+						r.compete();
 						Game.gamePlay();
+												
 					} else if (no == 2){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is CYCLING");
-						ath.AthleteDisplay();
-						ath.SelectcycAthlete();
+						da.AthleteDisplay();
+						da.SelectcycAthlete();
 						ref.DisplayReferee();
 						ref.SelectReferee();
-						ath.PredictWinner();
+						da.PredictWinner();
+						r.compete();
 						Game.gamePlay();
 					} if (no == 3){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is SWIMMING");
-						ath.AthleteDisplay();
-						ath.SelectswimAthlete();
+						da.AthleteDisplay();
+						da.SelectswimAthlete();
 						ref.DisplayReferee();
 						ref.SelectReferee();
-						ath.PredictWinner();
+						da.PredictWinner();
 						Game.gamePlay();
 					}
 
@@ -121,7 +129,26 @@ public class Driver {
 
 	}
 
+	
+
+	public void GenerateTime(){
+		
+		switch(no){
+		case 1:
+		
+		case 2:
+		
+		case 3:
+		
+		
+		}choice = false;
+	}
+	
+	}
+
 }
+
+
 
 
 
