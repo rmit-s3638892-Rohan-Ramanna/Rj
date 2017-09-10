@@ -14,9 +14,9 @@ public class Driver {
 	public static int no = 0;
 	public static void displayMenu() {
 
-		System.out.println("\t" +"*****************************************");
-		System.out.println("\t\t WELCOME TO OZLYMPIC GAMES \t\n");
-		System.out.println("\t" +"*****************************************");
+		System.out.println("\t" +"************************************************");
+		System.out.println("\t\t 	WELCOME TO OZLYMPIC GAMES \t\n");
+		System.out.println("\t" +"************************************************");
 		System.out.println("\t1.Select a game to run");
 		System.out.println("\t2.Display the final results of all games");
 		System.out.println("\t3.Display the points of all Athletes");
@@ -32,7 +32,7 @@ public class Driver {
 			try {
 				input = scan.nextInt();
 
-				if(input > 0 || input <= 4){
+				while(input > 0 || input <= 4){
 					switch(input){
 					case 1:
 						System.out.println();
@@ -40,16 +40,37 @@ public class Driver {
 						GamerunOptions();
 						break;
 					case 2:
-						System.out.println("\tDisplay the final results of all games");
-						Game.finallist();
+						System.out.println();
+						System.out.println("\tDisplay the final results of all games \n");
+						Game.finalParticipantlist();
+						System.out.println();
+						displayMenu();
 						break;
 					case 3:
 						System.out.println("\tDisplay the points of all Athletes");
+						Data.copyathletedata();
+						Game.PointsDisplay();
+						displayMenu();
 						break;
 					case 4:
 						System.out.println("\tThank you. Visit Again!");
 						System.exit(0);
 						break;
+					default:
+					      System.out.println();
+					      System.out.println("\tPlease Select Valid Option");
+					      System.out.println();
+					      System.out.println("\t" + "*****************************************");
+					      System.out.println("\t\t WELCOME TO OZLYMPIC GAMES \t\n");
+					      System.out.println("\t" + "*****************************************");
+					      System.out.println("\t1.Select a game to run");
+					      System.out.println("\t2.Display the final results of all games");
+					      System.out.println("\t3.Display the points of all Athletes");
+					      System.out.println("\t4.Exit");
+					      System.out.print("\tPlease Select the option from menu: ");
+					      input = scan.nextInt();
+					      break;	
+						
 					}choice = false;
 				}
 			}
@@ -79,10 +100,10 @@ public class Driver {
 			System.out.println("\t3.SWIMMING ");
 			System.out.println();
 
-			try {
+		
 				System.out.print("\tEnter the Option : ");
 				no = scan.nextInt();
-				if ( no >= 1 || no <= 3){
+				while ( no >= 1 || no <= 3){
 					if (no == 1){ // Select the Game
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is RUNNING");
@@ -92,10 +113,9 @@ public class Driver {
 						rf.DisplayReferee();
 						rf.SelectReferee();
 						da.PredictWinner();
-						r.compete();
+						GenerateTime();
 						Game.gamePlay();
-						da.Winner();
-				
+						da.Winner();				
 					} else if (no == 2){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is CYCLING");
@@ -104,7 +124,7 @@ public class Driver {
 						rf.DisplayReferee();
 						rf.SelectReferee();
 						da.PredictWinner();
-						r.compete();
+						GenerateTime();
 						Game.gamePlay();
 						da.Winner();
 					} if (no == 3){
@@ -114,18 +134,22 @@ public class Driver {
 						da.SelectswimAthlete();
 						rf.DisplayReferee();
 						rf.SelectReferee();
-						r.compete();
+						da.PredictWinner();
+						GenerateTime();
 						Game.gamePlay();
 						da.Winner();
 					}
-
-				}opt = false;
-			}
-			catch (Exception e){	
-				System.out.println("Enter the valid option from Menu");
-				System.err.println(e);
-				scan.next();
-			}
+					else {
+					     System.out.println("\n\tPlease Select Option From List");
+					     System.out.println();
+					     System.out.println("\t1.RUNNING ");
+					     System.out.println("\t2.CYCLING ");
+					     System.out.println("\t3.SWIMMING ");
+					     System.out.println();
+					     System.out.print("\tEnter the Option : ");
+					     no = scan.nextInt();
+					    }
+				}opt = false;			    
 
 		}while(opt);
 
@@ -141,7 +165,7 @@ public class Driver {
 		Randnum.numbers.clear();		
 	}		
 
-	public void GenerateTime(){
+	public static void GenerateTime(){
 
 		switch(no){
 		case 1:			

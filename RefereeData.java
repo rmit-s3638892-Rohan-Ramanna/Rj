@@ -7,6 +7,15 @@ public class RefereeData {
 
 	public static ArrayList<Referee> ref = new ArrayList<Referee>();
 	private static Scanner ip = new Scanner(System.in);
+	public String umpirename;
+
+	public String getUmpire() {
+		return umpirename;
+	}
+
+	public void setUmpire(String umpire) {
+		this.umpirename = umpire;
+	}
 
 	public RefereeData(){
 		ref.add(new Referee("RF01","Nick",57,"NSW"));
@@ -28,7 +37,7 @@ public class RefereeData {
 		System.out.println();
 		Boolean valid = true; 
 		int count = 0;
-		System.out.print("\tEnter the Referee ID for this match(in Upper Case): ");
+		System.out.print("\tEnter the Referee ID for this match: ");
 
 		do
 		{
@@ -38,6 +47,7 @@ public class RefereeData {
 				if(!(umpire.equals(ref.get(i).getRefID()))){
 					count++;
 				}else{
+					umpirename=ref.get(i).getRefName();
 					System.out.println("\tReferee for this Match is : " + ref.get(i).getRefName());
 					valid = false;
 					count=0;

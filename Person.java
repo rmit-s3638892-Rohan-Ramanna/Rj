@@ -110,7 +110,7 @@ public class Person {
 		}
 		else if(time>0){
 			
-			return "\tID=" + getID() + "\t Name=" + getName() + "\t Time=" + getTime() ;
+			return "\tID=" + getID() + "\t Name=" + getName() + "\t Time=" + getTime() + "\t Points=" + getPoints();
 		}
 		return "\tID=" + getID() + "\t Name=" + getName() + "\t Sport=" + getSport()+ "\t" + "Age=" + getAge() + "\t State=" +
 			getState() ;

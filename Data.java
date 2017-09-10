@@ -12,7 +12,7 @@ public class Data {
 	public static ArrayList<Person> athleteData = new ArrayList<Person>();
 	public static ArrayList<Person> participantList = new ArrayList<Person>();
 	public static ArrayList<String> inputList = new ArrayList<String>();
-
+	public static ArrayList<Person> allPointsdata = new ArrayList<Person>();
 
 	public static int p;
 	String prediction;
@@ -37,7 +37,7 @@ public class Data {
 		athleteData.add(new Person("C77","EASHAN","Cycling ",27,"NSW",0));
 		athleteData.add(new Person("C88","CAROL","Cycling ",34,"NSW",0));
 
-		athleteData.add(new Person("R11","Naresh","Running ",18,"NT",0));
+		athleteData.add(new Person("R11","NARESH","Running ",18,"NT",0));
 		athleteData.add(new Person("R12","SATYA","Running ",21,"WA",0));
 		athleteData.add(new Person("R13","SHREYA","Running ",30,"ACT",0));
 		athleteData.add(new Person("R14","DAVE","Running ",27,"TAS",0));
@@ -56,6 +56,13 @@ public class Data {
 		athleteData.add(new Person("P08","ROHIT","SpAthlete",27,"MYS",0));
 	}
 
+	public static void copyathletedata(){
+		System.out.println(athleteData.size());
+		for(int i=0;i<athleteData.size();i++){
+			allPointsdata.add(athleteData.get(i));
+		}
+		System.out.println(allPointsdata);
+	}
 
 	public void AthleteDisplay(){
 		for(Person p : athleteData)
@@ -296,6 +303,9 @@ public class Data {
 
 		}
 	}
+	
+	
+	
 }
 
 
