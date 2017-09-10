@@ -1,54 +1,54 @@
-package RJ_Game;
+package RJGame;
 
 public class Referee {
 	
-	private String RefID;
-	private String RefName;
-	private int RefAge;
-	private String RefState;
+	private String rid; // Declare instance variable Referee ID
+	private String rname; // Declared Referee Name
+	private int rage; // Declare Referee Age
+	private String rstate; // Declare Referee State
 	
-	public Referee(String refID, String refName, int refAge, String refState) {
-		RefID = refID;
-		RefName = refName;
-		RefAge = refAge;
-		RefState = refState;
+	public Referee(String refID, String refName, int refAge, String refState) { // Referee Constructor
+		rid = refID;
+		rname = refName;
+		rage = refAge;
+		rstate = refState;
 	}
 	
 	public String getRefID() {
-		return RefID;
+		return rid;
 	}
 
 	public void setRefID(String refID) {
-		RefID = refID;
+		rid = refID;
 	}
 
 	public String getRefName() {
-		return RefName;
+		return rname;
 	}
 
 	public void setRefName(String refName) {
-		RefName = refName;
+		rname = refName;
 	}
 
 	public int getRefAge() {
-		return RefAge;
+		return rage;
 	}
 
 	public void setRefAge(int refAge) {
-		RefAge = refAge;
+		rage = refAge;
 	}
 	
 	public String getRefState() {
-		return RefState;
+		return rstate;
 	}
 
 	public void setRefState(String refState) {
-		RefState = refState;
+		rstate = refState;
 	}
 
 	@Override
-	public String toString() {
-		return "Referee RefID=" + RefID + ", RefName=" + RefName + ", RefAge=" + RefAge + ", RefState=" + RefState ;
+	public String toString() { // Instance Variable toString Conversion
+		return "Referee RefID=" + rid + ", RefName=" + rname + ", RefAge=" + rage + ", RefState=" + rstate ;
 	}
 
 	

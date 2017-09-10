@@ -1,4 +1,4 @@
-package RJ_Game;
+package RJGame;
 
 /**
  * Created by Rohan.

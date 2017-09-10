@@ -1,4 +1,4 @@
-package RJ_Game;
+package RJGame;
 
 import java.awt.List;
 import java.util.ArrayList;
@@ -10,12 +10,11 @@ import java.util.Vector;
 
 public class Randnum {
 
-
-	public static ArrayList<Integer> gentime = new ArrayList<Integer>(); 
 	private int start ;
 	private int end ;
-
-	private Stack<Integer> numbers = new Stack<>();
+	
+	public static ArrayList<Integer> gentime = new ArrayList<Integer>(); 
+	public static Stack<Integer> numbers = new Stack<>();
 
 	public Randnum(int start, int end){
 		this.start = start;
@@ -44,9 +43,7 @@ public class Randnum {
 		for(int i=0; i<d.p;i++){
 			pick = rand.nextInt();
 			gentime.add(pick);
-			//System.out.println(gentime);
-
-		}
+			}
 
 		return gentime;
 	}

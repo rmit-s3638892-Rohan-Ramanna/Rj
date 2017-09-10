@@ -1,10 +1,10 @@
-package RJ_Game;
+package RJGame;
 
 import java.util.Random;
 
 public class Person {
 
-	private String ID; // Declared Athlete ID
+	private String id; // Declared Athlete ID
 	private String name; // Declared Athlete Name.
 	private String sport;
 	private int age;
@@ -13,15 +13,15 @@ public class Person {
 	private String gameID;
 	private int time;
 	
-	public Person(String gameID, String Id, String name,int time){
+	public Person(String gameID, String id, String name,int time){
 		this.gameID=gameID;
-		this.ID=Id;
+		this.id=id;
 		this.name=name;
 		this.time=time;		
 	}
 
 	public Person(String ID, String name, String sport, int age, String state, int points){
-		this.ID = ID;
+		this.id = ID;
 		this.name = name;
 		this.sport = sport;
 		this.age= age;
@@ -34,17 +34,17 @@ public class Person {
 	}
 	
 	public Person(String Id, String name,int time){
-		this.ID=Id;
+		this.id=Id;
 		this.name=name;
 		this.time=time;		
 	}		
 
 	public String getID() {
-		return ID;
+		return id;
 	}
 
 	public void setID(String iD) {
-		ID = iD;
+		id = iD;
 	}
 
 	public String getName() {
@@ -106,7 +106,7 @@ public class Person {
 	
 	public String toString() {
 		if(gameID!=null){
-			return "\tGameID= " + getGameID()+"\tID= " + getID() + "\t Name=" + getName() + "\t Time=" + getTime() ;
+			return "\tGameID=" + getGameID()+"\tID=" + getID() + "\t Name=" + getName() + "\t Time=" + getTime() ;
 		}
 		else if(time>0){
 			

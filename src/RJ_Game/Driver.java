@@ -1,4 +1,4 @@
-package RJ_Game;
+package RJGame;
 
 /**
  * Created by Rohan.
@@ -11,9 +11,9 @@ import java.util.InputMismatchException;
 
 
 public class Driver {
+	
 	public static Scanner scan = new Scanner(System.in);
 	public static int no = 0;
-
 	public static void displayMenu() {
 
 		System.out.println("\t" +"*****************************************");
@@ -67,9 +67,9 @@ public class Driver {
 
 		Data da = new Data();
 		Running r = new Running();
-		RefereeData ref = new RefereeData();
+		RefereeData rf = new RefereeData();
 		da.athleteData();
-		
+
 		boolean opt = true;
 
 		do{
@@ -90,19 +90,21 @@ public class Driver {
 						System.out.println();
 						da.AthleteDisplay();
 						da.SelectrunAthlete();
-						ref.DisplayReferee();
-						ref.SelectReferee();
+						rf.DisplayReferee();
+						rf.SelectReferee();
 						da.PredictWinner();
 						r.compete();
 						Game.gamePlay();
-												
+						da.Winner();
+						listclear();
+						GamerunOptions();
 					} else if (no == 2){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is CYCLING");
 						da.AthleteDisplay();
 						da.SelectcycAthlete();
-						ref.DisplayReferee();
-						ref.SelectReferee();
+						rf.DisplayReferee();
+						rf.SelectReferee();
 						da.PredictWinner();
 						r.compete();
 						Game.gamePlay();
@@ -111,8 +113,8 @@ public class Driver {
 						System.out.println("\tThe Game You have Selected is SWIMMING");
 						da.AthleteDisplay();
 						da.SelectswimAthlete();
-						ref.DisplayReferee();
-						ref.SelectReferee();
+						rf.DisplayReferee();
+						rf.SelectReferee();
 						da.PredictWinner();
 						Game.gamePlay();
 					}
@@ -129,24 +131,40 @@ public class Driver {
 
 	}
 
-	
+
+	public static void listclear(){
+		Data.inputList.clear();
+		Data.participantList.clear();
+		Data.athleteData.clear();
+		RefereeData.ref.clear();
+		Randnum.gentime.clear();
+		Randnum.numbers.clear();		
+	}		
 
 	public void GenerateTime(){
-		
+
 		switch(no){
-		case 1:
-		
+		case 1:			
+			Running rt = new Running();
+			rt.compete();
+			break;
 		case 2:
-		
+			Cycling cy = new Cycling();
+			cy.compete();
+			break;
 		case 3:
-		
-		
-		}choice = false;
+			Swimming sw = new Swimming();
+			sw.compete();
+			break;
+
+		}
 	}
 	
-	}
+	
 
 }
+
+
 
 
 
