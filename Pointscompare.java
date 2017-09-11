@@ -2,9 +2,9 @@ package RJGame;
 
 import java.util.Comparator;
 
-public class Pointscompare  implements Comparator<Person> {
+public class Pointscompare  implements Comparator<Person> { // Method for Point Comparition
 	public int compare(final Person a, final Person b) {
-		if (a.getPoints() < b.getPoints()) {
+		if (a.getPoints() > b.getPoints()) {
 			return -1;
 		}
 		else if (a.getPoints() < b.getPoints()) {

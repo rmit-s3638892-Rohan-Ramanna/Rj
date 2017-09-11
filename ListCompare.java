@@ -6,7 +6,7 @@ package RJGame;
 
 import java.util.Comparator;
 
-public class ListCompare implements Comparator<Person> {
+public class ListCompare implements Comparator<Person> {  // Method to compare time
 
 	public int compare(final Person a, final Person b) {
 		if (a.getTime() < b.getTime()) {

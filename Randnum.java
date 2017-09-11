@@ -16,12 +16,12 @@ public class Randnum {
 	public static ArrayList<Integer> gentime = new ArrayList<Integer>(); 
 	public static Stack<Integer> numbers = new Stack<>();
 
-	public Randnum(int start, int end){
+	public Randnum(int start, int end){ // Random Number Constructor
 		this.start = start;
 		this.end = end;
 	}
 
-	public void loadNumbers(){
+	public void loadNumbers(){ // Method to load Numbers
 		for (int i=start;i<=end;i++){
 			numbers.push(i);
 		}
@@ -34,7 +34,7 @@ public class Randnum {
 	}
 
 
-	public ArrayList<Integer> randomGenrator()
+	public ArrayList<Integer> randomGenrator() // Arraylist to generate random numbers
 	{	
 		int pick;
 		Data d = new Data();

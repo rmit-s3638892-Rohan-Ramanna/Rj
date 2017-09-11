@@ -12,7 +12,8 @@ public class Driver {
 	
 	public static Scanner scan = new Scanner(System.in);
 	public static int no = 0;
-	public static void displayMenu() {
+	
+	public static void displayMenu() { // Display Main Menu  
 
 		System.out.println("\t" +"************************************************");
 		System.out.println("\t\t 	WELCOME TO OZLYMPIC GAMES \t\n");
@@ -32,7 +33,7 @@ public class Driver {
 			try {
 				input = scan.nextInt();
 
-				while(input > 0 || input <= 4){
+				if(input > 0 || input <= 4){
 					switch(input){
 					case 1:
 						System.out.println();
@@ -48,7 +49,8 @@ public class Driver {
 						break;
 					case 3:
 						System.out.println("\tDisplay the points of all Athletes");
-						Data.copyathletedata();
+						//Data.copyathletedata();
+						Game.pointslist();
 						Game.PointsDisplay();
 						displayMenu();
 						break;
@@ -56,21 +58,7 @@ public class Driver {
 						System.out.println("\tThank you. Visit Again!");
 						System.exit(0);
 						break;
-					default:
-					      System.out.println();
-					      System.out.println("\tPlease Select Valid Option");
-					      System.out.println();
-					      System.out.println("\t" + "*****************************************");
-					      System.out.println("\t\t WELCOME TO OZLYMPIC GAMES \t\n");
-					      System.out.println("\t" + "*****************************************");
-					      System.out.println("\t1.Select a game to run");
-					      System.out.println("\t2.Display the final results of all games");
-					      System.out.println("\t3.Display the points of all Athletes");
-					      System.out.println("\t4.Exit");
-					      System.out.print("\tPlease Select the option from menu: ");
-					      input = scan.nextInt();
-					      break;	
-						
+									
 					}choice = false;
 				}
 			}
@@ -83,7 +71,7 @@ public class Driver {
 	}
 
 
-	public static void GamerunOptions() {
+	public static void GamerunOptions() { // Display Game Menu
 
 		Data da = new Data();
 		Running r = new Running();
@@ -103,7 +91,7 @@ public class Driver {
 		
 				System.out.print("\tEnter the Option : ");
 				no = scan.nextInt();
-				while ( no >= 1 || no <= 3){
+				if ( no >= 1 || no <= 3){
 					if (no == 1){ // Select the Game
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is RUNNING");
@@ -113,9 +101,9 @@ public class Driver {
 						rf.DisplayReferee();
 						rf.SelectReferee();
 						da.PredictWinner();
-						GenerateTime();
+						r.compete();
 						Game.gamePlay();
-						da.Winner();				
+						da.Winner();
 					} else if (no == 2){
 						System.out.println();
 						System.out.println("\tThe Game You have Selected is CYCLING");
@@ -156,7 +144,7 @@ public class Driver {
 	}
 
 
-	public static void listclear(){
+	public static void listclear(){ // Clear Arraylist 
 		Data.inputList.clear();
 		Data.participantList.clear();
 		Data.athleteData.clear();
@@ -165,7 +153,7 @@ public class Driver {
 		Randnum.numbers.clear();		
 	}		
 
-	public static void GenerateTime(){
+	public static void GenerateTime(){ // generate random Time
 
 		switch(no){
 		case 1:			

@@ -9,15 +9,16 @@ import java.util.*;
 
 public class Data {
 
-	public static ArrayList<Person> athleteData = new ArrayList<Person>();
-	public static ArrayList<Person> participantList = new ArrayList<Person>();
-	public static ArrayList<String> inputList = new ArrayList<String>();
-	public static ArrayList<Person> allPointsdata = new ArrayList<Person>();
+	public static ArrayList<Person> athleteData = new ArrayList<Person>(); // Declare arraylist for Athletedata
+	public static ArrayList<Person> participantList = new ArrayList<Person>(); // Declare arraylist for participantlist
+	public static ArrayList<String> inputList = new ArrayList<String>();// Declare arraylist for user input
+	public static ArrayList<Person> allPointsdata = new ArrayList<Person>(); // Declare arraylist for points display
 
 	public static int p;
 	String prediction;
+	static int val;
 
-	public void athleteData(){	
+	public void athleteData(){	// Athletedata Database
 
 		athleteData.add(new Person("S11","SAGAR","Swimming ",21,"TAS",0));
 		athleteData.add(new Person("S22","SHIV","Swimming ",29,"SA",0));
@@ -54,23 +55,26 @@ public class Data {
 		athleteData.add(new Person("P06","GIRI","SpAthlete",25,"NSW",0));
 		athleteData.add(new Person("P07","REVATI","SpAthlete",21,"MYS",0));
 		athleteData.add(new Person("P08","ROHIT","SpAthlete",27,"MYS",0));
+		
 	}
 
-	public static void copyathletedata(){
-		System.out.println(athleteData.size());
-		for(int i=0;i<athleteData.size();i++){
-			allPointsdata.add(athleteData.get(i));
-		}
-		System.out.println(allPointsdata);
-	}
-
-	public void AthleteDisplay(){
+	
+	public void AthleteDisplay(){ // display Athlete Data
 		for(Person p : athleteData)
 			System.out.println("\tID="+ p.getID() + "\tName=" +p.getName() + "\tSport="+ p.getSport() + "\tAge=" +p.getAge() + "\tState=" + p.getState());
+		if(val==0){
+		for(int i=0;i<athleteData.size();i++){
+			allPointsdata.add(athleteData.get(i));
+			val++;
+		}
+		System.out.println("val"+val);
+		}
+		
+	
 	}
 
 
-	public void SelectrunAthlete(){
+	public void SelectrunAthlete(){ // method to select running Athlete 
 
 		boolean choice = true;
 		int value;
@@ -127,7 +131,7 @@ public class Data {
 	}
 
 
-	public void SelectswimAthlete(){
+	public void SelectswimAthlete(){ // method to select Swimming Athlete
 
 		boolean choice = true;
 		int value;
@@ -184,7 +188,7 @@ public class Data {
 	}
 
 
-	public void SelectcycAthlete(){
+	public void SelectcycAthlete(){ // method to select Cycling Athlete
 
 		boolean choice = true;
 		int value;
@@ -242,7 +246,7 @@ public class Data {
 
 
 
-	public void PredictWinner(){
+	public void PredictWinner(){ // method to predict the winner
 		System.out.println();
 		Boolean valid = true; 
 		int count = 0;
@@ -271,7 +275,7 @@ public class Data {
 	}
 
 
-	public void Winner(){
+	public void Winner(){ // Method to display the prediction
 
 		if(prediction.equals(participantList.get(0).getName())){
 			System.out.println();
@@ -300,13 +304,24 @@ public class Data {
 				Driver.displayMenu();
 				break;
 			}
-
 		}
-	}
+     }
 	
+	
+public void printarraylist(){
+	
+	System.out.println(athleteData);
+
 	
 	
 }
+	
+	
+
+}
+	
+	
+
 
 
 

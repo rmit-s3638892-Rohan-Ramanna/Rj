@@ -17,13 +17,13 @@ public class RefereeData {
 		this.umpirename = umpire;
 	}
 
-	public RefereeData(){
+	public RefereeData(){ // Referre Database
 		ref.add(new Referee("RF01","Nick",57,"NSW"));
 		ref.add(new Referee("RF02","John",30,"TAS"));
 		ref.add(new Referee("RF03","Reham",25,"VIC"));
 	}
 
-	public void DisplayReferee(){
+	public void DisplayReferee(){ // DisplayReferee Details
 		System.out.println();
 		System.out.println("\tOfficials for this Match is: ");
 		System.out.println();

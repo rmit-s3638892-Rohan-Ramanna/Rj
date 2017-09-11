@@ -2,7 +2,7 @@ package RJGame;
 
 import java.util.ArrayList;
 
-public class Cycling implements Sport {
+public class Cycling implements Sport { // Implement interface Sport
 
 	private static int runstart = 500;
 	private static int runend = 800;
