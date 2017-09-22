@@ -9,10 +9,10 @@ import java.util.InputMismatchException;
 
 
 public class Driver {
-	
+
 	public static Scanner scan = new Scanner(System.in);
 	public static int no = 0;
-	
+
 	public static void displayMenu() { // Display Main Menu  
 
 		System.out.println("\t" +"************************************************");
@@ -58,7 +58,7 @@ public class Driver {
 						System.out.println("\tThank you. Visit Again!");
 						System.exit(0);
 						break;
-									
+
 					}choice = false;
 				}
 			}
@@ -88,56 +88,56 @@ public class Driver {
 			System.out.println("\t3.SWIMMING ");
 			System.out.println();
 
-		
-				System.out.print("\tEnter the Option : ");
-				no = scan.nextInt();
-				if ( no >= 1 || no <= 3){
-					if (no == 1){ // Select the Game
-						System.out.println();
-						System.out.println("\tThe Game You have Selected is RUNNING");
-						System.out.println();
-						da.AthleteDisplay();
-						da.SelectrunAthlete();
-						rf.DisplayReferee();
-						rf.SelectReferee();
-						da.PredictWinner();
-						r.compete();
-						Game.gamePlay();
-						da.Winner();
-					} else if (no == 2){
-						System.out.println();
-						System.out.println("\tThe Game You have Selected is CYCLING");
-						da.AthleteDisplay();
-						da.SelectcycAthlete();
-						rf.DisplayReferee();
-						rf.SelectReferee();
-						da.PredictWinner();
-						GenerateTime();
-						Game.gamePlay();
-						da.Winner();
-					} if (no == 3){
-						System.out.println();
-						System.out.println("\tThe Game You have Selected is SWIMMING");
-						da.AthleteDisplay();
-						da.SelectswimAthlete();
-						rf.DisplayReferee();
-						rf.SelectReferee();
-						da.PredictWinner();
-						GenerateTime();
-						Game.gamePlay();
-						da.Winner();
-					}
-					else {
-					     System.out.println("\n\tPlease Select Option From List");
-					     System.out.println();
-					     System.out.println("\t1.RUNNING ");
-					     System.out.println("\t2.CYCLING ");
-					     System.out.println("\t3.SWIMMING ");
-					     System.out.println();
-					     System.out.print("\tEnter the Option : ");
-					     no = scan.nextInt();
-					    }
-				}opt = false;			    
+
+			System.out.print("\tEnter the Option : ");
+			no = scan.nextInt();
+			if ( no >= 1 || no <= 3){
+				if (no == 1){ // Select the Game
+					System.out.println();
+					System.out.println("\tThe Game You have Selected is RUNNING");
+					System.out.println();
+					da.AthleteDisplay();
+					da.SelectrunAthlete();
+					rf.DisplayReferee();
+					rf.SelectReferee();
+					da.PredictWinner();
+					r.compete();
+					Game.gamePlay();
+					da.Winner();
+				} else if (no == 2){
+					System.out.println();
+					System.out.println("\tThe Game You have Selected is CYCLING");
+					da.AthleteDisplay();
+					da.SelectcycAthlete();
+					rf.DisplayReferee();
+					rf.SelectReferee();
+					da.PredictWinner();
+					GenerateTime();
+					Game.gamePlay();
+					da.Winner();
+				} if (no == 3){
+					System.out.println();
+					System.out.println("\tThe Game You have Selected is SWIMMING");
+					da.AthleteDisplay();
+					da.SelectswimAthlete();
+					rf.DisplayReferee();
+					rf.SelectReferee();
+					da.PredictWinner();
+					GenerateTime();
+					Game.gamePlay();
+					da.Winner();
+				}
+				else {
+					System.out.println("\n\tPlease Select Option From List");
+					System.out.println();
+					System.out.println("\t1.RUNNING ");
+					System.out.println("\t2.CYCLING ");
+					System.out.println("\t3.SWIMMING ");
+					System.out.println();
+					System.out.print("\tEnter the Option : ");
+					no = scan.nextInt();
+				}
+			}opt = false;			    
 
 		}while(opt);
 
@@ -171,8 +171,8 @@ public class Driver {
 
 		}
 	}
-	
-	
+
+
 
 }
 

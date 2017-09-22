@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class RefereeData {
 
 	public static ArrayList<Referee> ref = new ArrayList<Referee>();
+	public static ArrayList<Referee> refFinal = new ArrayList<Referee>();
 	private static Scanner ip = new Scanner(System.in);
 	public String umpirename;
 
@@ -17,7 +18,7 @@ public class RefereeData {
 		this.umpirename = umpire;
 	}
 
-	public RefereeData(){ // Referre Database
+	public RefereeData(){ // Referee Database
 		ref.add(new Referee("RF01","Nick",57,"NSW"));
 		ref.add(new Referee("RF02","John",30,"TAS"));
 		ref.add(new Referee("RF03","Reham",25,"VIC"));
@@ -28,12 +29,12 @@ public class RefereeData {
 		System.out.println("\tOfficials for this Match is: ");
 		System.out.println();
 		for (Referee r : ref){
-			System.out.println("\tRefID= " + r.getRefID() + "\tRefName= " + r.getRefName() + "\tRefAge= " + r.getRefAge() +"\tState=" + r.getRefState() );
+			System.out.println("\tRefID= " + r.getRefID() + "\tRefName= " + r.getRefName() + "\tRefAge= " + r.getRefAge() +"\tState=" + r.getRefState());
+			refFinal.addAll(ref);
 		}
 	}
 
 	public void SelectReferee(){
-
 		System.out.println();
 		Boolean valid = true; 
 		int count = 0;
@@ -48,6 +49,7 @@ public class RefereeData {
 					count++;
 				}else{
 					umpirename=ref.get(i).getRefName();
+					refFinal.add(ref.get(i));
 					System.out.println("\tReferee for this Match is : " + ref.get(i).getRefName());
 					valid = false;
 					count=0;
@@ -61,6 +63,10 @@ public class RefereeData {
 		}
 		while(valid);
 	}
+	
+	
+	
+	
 }
 
 

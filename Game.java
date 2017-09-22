@@ -16,6 +16,7 @@ public class Game {
 
 	Driver d = new Driver();
 	static int k=0;
+	static int r=0;
 
 	public static ArrayList<Person> finallist = new ArrayList<Person>(); // Arraylist to save final athlete
 	public static ArrayList<Person> resultList = new ArrayList<Person>();//Arraylist to save final result
@@ -30,6 +31,7 @@ public class Game {
 	public static void gamePlay(){ // Method to run game
 		gameID = "Game"+(++counter);
 
+		
 		for (int i=0;i<Randnum.gentime.size();i++){
 			Data.participantList.get(i).setGameID(gameID);
 			Data.participantList.get(i).setTime(Randnum.gentime.get(i));
@@ -37,19 +39,24 @@ public class Game {
 
 		System.out.println();
 		System.out.println("\tResults:");
+				
 		for(int i =0;i<Data.participantList.size();i++){
 			timesort();
 			System.out.println(Data.participantList.get(i));
 			finallist.add(Data.participantList.get(i));	
 			resultList.add(Data.participantList.get(i));
 		}
-
 	}
 
+	
+	
 	public static void finalParticipantlist(){ // Display final Participants
-
 		for (int i=0;i<resultList.size();i++){
+			
+		
 			System.out.println(resultList.get(i));
+			
+			
 		}
 	}
 
@@ -63,7 +70,6 @@ public class Game {
 			for(int j=0;j<Data.allPointsdata.size();j++){
 				if(Data.allPointsdata.get(j).getID().contains(finallist.get(i).getID())){
 					if(i==(k)){
-						System.out.println("J value =" + j);
 						p=5+Data.allPointsdata.get(j).getPoints();
 						System.out.println("p"+p);
 						Data.allPointsdata.get(j).setPoints(p);

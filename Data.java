@@ -69,8 +69,6 @@ public class Data {
 		}
 		System.out.println("val"+val);
 		}
-		
-	
 	}
 
 
@@ -271,7 +269,6 @@ public class Data {
 			}
 		}
 		while(valid);
-
 	}
 
 
@@ -306,17 +303,6 @@ public class Data {
 			}
 		}
      }
-	
-	
-public void printarraylist(){
-	
-	System.out.println(athleteData);
-
-	
-	
-}
-	
-	
 
 }
 	
